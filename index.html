@@ -5,6 +5,26 @@
     <title>bake.myUrl-Inconsistent With Policy</title>
     <link href="/static/style.css" type="text/css" rel="Stylesheet" />
 	<meta name="description" content="invalid with Policy Page">
+	<script>
+		function inIframe () {
+			try {
+				return window.self !== window.top;
+			} catch (e) {
+				return true;
+			}
+		}
+		if (inIframe())
+		{
+			try {
+				window.stop();
+			} catch (e) {
+				document.execCommand("Stop");
+			}
+			
+		}
+		
+	</script>
+
 	<!--
 		<script type='text/javascript'>
 			var googletag = googletag || {};
